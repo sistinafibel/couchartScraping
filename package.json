@@ -1,0 +1,43 @@
+{
+  "name": "couchartscraping",
+  "version": "1.0.0",
+  "description": "쿠차트 스크래핑",
+  "main": "index.js",
+  "scripts": {
+    "start": "cross-env SCRAPING_MODE=production ts-node --transpile-only src/index.ts",
+    "forced": "cross-env SCRAPING_MODE=forced ts-node --transpile-only src/index.ts",
+    "test": "cross-env SCRAPING_MODE=develop ts-node --transpile-only src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sistinafibel/couchartScraping.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sistinafibel/couchartScraping/issues"
+  },
+  "homepage": "https://github.com/sistinafibel/couchartScraping#readme",
+  "dependencies": {
+    "axios": "^0.26.1",
+    "cheerio": "^1.0.0-rc.10",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.0.0",
+    "eslint": "^8.11.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-prettier": "^4.0.0",
+    "node-cron": "^3.0.0",
+    "pg": "^8.7.3",
+    "prettier": "^2.5.1",
+    "ts-jest": "^27.1.3",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.2"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.21",
+    "@types/pg": "^8.6.5",
+    "@typescript-eslint/eslint-plugin": "^5.14.0",
+    "@typescript-eslint/parser": "^5.14.0"
+  }
+}
