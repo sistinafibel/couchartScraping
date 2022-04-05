@@ -90,7 +90,7 @@ class CoupangService {
   }
 
   /**
-   * 쿠팡에 지정된 ID값 기준으로 가격 정보를 모두 긁어옵니다.
+   * 쿠*에 지정된 ID값 기준으로 가격 정보를 모두 긁어옵니다.
    */
   public async mainScraping(idx: number, catagoryCode: number): Promise<boolean> {
     let page = 1;

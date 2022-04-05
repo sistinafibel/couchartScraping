@@ -9,7 +9,7 @@ const coupangService = new CoupangService();
 
 const categoryService = new CategoryService();
 
-Slack.setUrl('https://hooks.slack.com/services/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');
+Slack.setUrl(process.env.SLACK_KEY);
 
 async function allCoupangScraping() {
   const categoryInfo = await categoryService.categoryToOne();
@@ -39,15 +39,14 @@ async function allCoupangScraping() {
       t1 = performance.now();
 
       log('히스토리로 카피 작업을 진행합니다.', true);
-
       Slack.message('안내', `히스토리 카피 작업 진행을 완료했습니다. \n ${(t1 - t0).toFixed(5)} ms`, 0);
     }
   }
 }
 
 export async function coupangScrapingCron(): Promise<void> {
-  log('쿠팡 스크래핑 준비 완료', true);
-  Slack.message('안내', `쿠팡 스크래핑 준비 완료`, 0);
+  log('쿠* 스크래핑 준비 완료', true);
+  Slack.message('안내', `쿠* 스크래핑 준비 완료`, 0);
 
   cron.schedule(`00 00 00 * * *`, async () => {
     // 카테고리 초기화
@@ -58,8 +57,8 @@ export async function coupangScrapingCron(): Promise<void> {
 }
 
 export async function coupangScraping(): Promise<void> {
-  log('쿠팡 강제 스크래핑 준비 완료', true);
-  Slack.message('안내', `쿠팡 강제 스크래핑 준비 완료`, 0);
+  log('쿠* 강제 스크래핑 준비 완료', true);
+  Slack.message('안내', `쿠* 강제 스크래핑 준비 완료`, 0);
 
   // 카테고리 초기화
   await categoryService.resetCategory();
